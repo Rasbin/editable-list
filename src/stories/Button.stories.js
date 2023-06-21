@@ -2,14 +2,27 @@ import { Button } from "../Button"
 
 export default {
   component: Button,
-  title: 'atoms/Button'
+  title: 'atoms/Button',
+  args: {
+    text: 'Click me!',
+    color: 'blue'
+  }
 }
 
 const Template = args => <Button { ...args } />
 
-export const Basic = Template.bind({});
-Basic.args = {
-  text: 'Click Me!',
+export const Unfilled = Template.bind({});
+Unfilled.args = {
   filled: false,
-  color: 'blue'
+}
+
+export const Filled = Template.bind({});
+Filled.args = {
+  filled: true,
+}
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  filled: false,
+  fullWidth: true,
 }

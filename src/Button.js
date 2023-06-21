@@ -8,11 +8,12 @@ const ButtonBase = styled.button`
   cursor: pointer;
   font-size: 16px;
   padding: 16px;
+  ${props => props.fullWidth && 'width: 100%;' }
 `;
 
-export const Button = ({ text, filled, color = 'black' }) => {
+export const Button = ({ text, filled, fullWidth, color = 'black' }) => {
   return (
-    <ButtonBase filled={filled} color={color}>
+    <ButtonBase filled={filled} color={color} fullWidth={fullWidth}>
       {text}
     </ButtonBase>
   )
