@@ -4,7 +4,7 @@ import { TextInput } from "./TextInput";
 import { ListItemContainer } from "./ListItemContainer";
 import { NormalText } from "./NormalText";
 
-export const EditableListItem = ({ value }) => {
+export const EditableListItem = ({ id, value, onUpdate = () => {}, onDelete = () => {} }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [editedValue, setEditedValue] = useState(value);
@@ -21,6 +21,7 @@ export const EditableListItem = ({ value }) => {
                     )}
       { isEditing ? (
         <Button color="green" text="Save" filled style={{ marginRight: '8px' }} onClick={() => {
+          onUpdate(id, editedValue);
           setIsEditing(false);
         }} />
       ) : (
@@ -36,7 +37,7 @@ export const EditableListItem = ({ value }) => {
           style={{ marginRight: '8px' }}
           filled
           onClick={() => {
-            alert('Deleting...')
+            onDelete(id);
             setIsDeleting(false);
           }}
         /> ) : (
