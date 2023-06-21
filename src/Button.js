@@ -11,9 +11,9 @@ const ButtonBase = styled.button`
   ${props => props.fullWidth && 'width: 100%;' }
 `;
 
-export const Button = ({ text, filled, fullWidth, color = 'black' }) => {
+export const Button = ({ text, filled, fullWidth, color = 'black', ...props }) => {
   return (
-    <ButtonBase filled={filled} color={color} fullWidth={fullWidth}>
+    <ButtonBase filled={filled} color={color} fullWidth={fullWidth} {...props}>
       {text}
     </ButtonBase>
   )
