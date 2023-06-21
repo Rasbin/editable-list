@@ -5,6 +5,10 @@ export default {
   title: 'atoms/TextInput',
 }
 
-export const Basic = () => (
-  <TextInput placeholder="Enter some text..." />
-);
+const Template = args => <TextInput {...args} />
+
+export const Basic = Template.bind({});
+Basic.args = {
+  placeholder: 'Enter some text...',
+  fullWidth: false
+}

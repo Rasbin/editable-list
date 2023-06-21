@@ -7,8 +7,10 @@ const TextInputBase = styled.input`
   font-size: 16px;
   padding: 16px;
   padding-left: 24px;
+  box-sizing: border-box;
+  ${props => props.fullWidth && 'width: 100%;'}
 `;
 
-export const TextInput = ( props ) => {
-    return <TextInputBase { ...props } />
+export const TextInput = ( { fullWidth, ...props }) => {
+    return <TextInputBase fullWidth={fullWidth} { ...props } />
 }
