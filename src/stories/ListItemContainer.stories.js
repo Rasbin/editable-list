@@ -5,4 +5,8 @@ export default {
   title: 'atoms/ListItemContainer'
 }
 
-export const Basic = () => <ListItemContainer />
+export const Basic = () => (
+  <ListItemContainer>
+    test@gmail.com
+  </ListItemContainer>
+);

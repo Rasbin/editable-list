@@ -5,4 +5,6 @@ export default {
   title: 'atoms/TextInput',
 }
 
-export const Basic = () => <TextInput />
+export const Basic = () => (
+  <TextInput placeholder="Enter some text..." />
+);

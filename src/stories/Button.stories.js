@@ -5,4 +5,4 @@ export default {
   title: 'atoms/Button'
 }
 
-export const Basic = () => <Button />
+export const Basic = () => <Button text="Click me!" />
