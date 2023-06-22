@@ -5,7 +5,12 @@ import { ListItemContainer } from "./ListItemContainer";
 import { NormalText } from "./NormalText";
 import { TransparentBackground } from "./TransparentBackground";
 
-export const EditableListItem = ({ id, value, onUpdate = () => {}, onDelete = () => {} }) => {
+export const EditableListItem = ({
+  id,
+  value,
+  onUpdate = () => {},
+  onDelete = () => {},
+ }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [editedValue, setEditedValue] = useState(value);
@@ -24,7 +29,7 @@ export const EditableListItem = ({ id, value, onUpdate = () => {}, onDelete = ()
     }} /> }
     <ListItemContainer>
       { isEditing ? ( <TextInput
-                        autofocus
+                        autoFocus
                         style={{ flex: 1, marginRight: '8px', zIndex: 2 }}
                         value={editedValue}
                         onChange={ e => setEditedValue(e.target.value) } />
