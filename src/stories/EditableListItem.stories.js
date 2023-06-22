@@ -4,6 +4,7 @@ import { Button } from "../Button";
 import { TextInput } from "../TextInput";
 import { ListItemContainer } from "../ListItemContainer";
 import { NormalText } from "../NormalText";
+import { TransparentBackground } from '../TransparentBackground';
 
 export default {
   component: EditableListItem,
@@ -12,7 +13,8 @@ export default {
     Button,
     TextInput,
     ListItemContainer,
-    NormalText
+    NormalText,
+    TransparentBackground,
   }   
 }
 
