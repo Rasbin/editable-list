@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { TextInput } from "./TextInput";
 import { ListItemContainer } from "./ListItemContainer";
@@ -8,6 +8,10 @@ export const EditableListItem = ({ id, value, onUpdate = () => {}, onDelete = ()
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [editedValue, setEditedValue] = useState(value);
+
+  useEffect(() => {
+    setEditedValue(value);
+  }, [value])
 
   return (
     <ListItemContainer>

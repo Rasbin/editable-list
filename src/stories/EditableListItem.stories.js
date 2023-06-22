@@ -1,3 +1,4 @@
+import { useArgs } from '@storybook/client-api';
 import { EditableListItem } from '../EditableListItem';
 import { Button } from "../Button";
 import { TextInput } from "../TextInput";
@@ -15,7 +16,16 @@ export default {
   }   
 }
 
-export const Basic = args => <EditableListItem { ...args } />
+export const Basic = args => {
+  const [_, updateArgs] = useArgs();
+
+  return (
+    <EditableListItem
+      { ...args }
+      onUpdate={(id, value) => updateArgs({ value })}
+      onDelete={id => alert(`Storybook: Deleting ${id}`)} />
+  );
+  }
 Basic.args = {
   id: '123',
   value: 'test@example.com',
